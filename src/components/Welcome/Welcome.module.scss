@@ -1,0 +1,97 @@
+@import "../../assets/scss/breakpoint";
+
+.welcome {
+    display: flex;
+    min-height: 100%;
+    transform: translateY(0);
+    transition: transform 500ms ease-in-out 0s;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+
+    &.active {
+        transform: translateY(-100%);
+    }
+}
+
+.welcome__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 110px;
+}
+
+.welcome__title {
+    font-size: 3.125rem;
+    font-weight: 900;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.welcome__desk {
+    max-width: 500px;
+    font-weight: 500;
+    margin: 0;
+
+    @include mobile {
+        font-weight: 400;
+    }
+}
+
+.welcome__bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome__button {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: -37px;
+    line-height: 205px;
+    user-select: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    border-radius: 50%;
+    background-color: #D93383;
+    border: none;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eb2b88;
+    }
+
+    svg {
+        position: absolute;
+        bottom: 3.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include mobile {
+        font-size: .875rem;
+        width: 140px;
+        height: 140px;
+
+        svg {
+            bottom: 2.7rem;
+        }
+
+    }
+}
